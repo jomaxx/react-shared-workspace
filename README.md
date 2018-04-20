@@ -8,7 +8,7 @@ yarn add react react-shared-workspace
 
 ## Usage
 
-```js
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { Workspaces, createWorkspace } from "react-shared-workspace";
