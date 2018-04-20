@@ -4,14 +4,12 @@
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "license": "MIT",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "scripts": {
     "prebuild": "rm -rf lib",
     "build": "rollup -c",
     "test": "jest",
-    "prepublishOnly": "yarn build && JEST_ENV=production yarn test"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "babel-core": "6",
