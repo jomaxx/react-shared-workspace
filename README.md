@@ -1,5 +1,7 @@
 # react-shared-workspace
 
+Share state across siblings!
+
 ## Install
 
 ```bash
@@ -70,3 +72,7 @@ function App() {
 
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
+
+## How it works?
+
+The `Workspaces` component stores all the state so put it high up in the react tree. `createWorkspace` returns a `Workspace` component whose state is linked across all of it's instances. When all instances of `Workspace` unmount, the state for that workspace is cleaned up.
