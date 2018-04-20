@@ -4,7 +4,9 @@
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "license": "MIT",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "prebuild": "rm -rf lib",
     "build": "rollup -c",
@@ -24,5 +26,9 @@
     "react-testing-library": "^2.1.1",
     "rollup": "^0.58.1",
     "rollup-plugin-babel": "^3.0.3"
+  },
+  "peerDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }
