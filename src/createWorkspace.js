@@ -7,7 +7,7 @@ export default function createWorkspace(defaultState) {
   const initialState = Object.assign({}, defaultState);
   const key = nextIndex++;
 
-  class Workspace extends React.PureComponent {
+  class WorkspaceSubscription extends React.PureComponent {
     static getDerivedStateFromProps(nextProps, prevState) {
       if (nextProps.state === prevState.state) return null;
       return { state: nextProps.state };
@@ -88,11 +88,11 @@ export default function createWorkspace(defaultState) {
     }
   }
 
-  function WorkspaceWrapper(props) {
+  function Workspace(props) {
     return (
       <Context.Consumer>
         {context => (
-          <Workspace
+          <WorkspaceSubscription
             {...props}
             state={
               context.workspaces[key]
@@ -106,5 +106,7 @@ export default function createWorkspace(defaultState) {
     );
   }
 
-  return WorkspaceWrapper;
+  Workspace.displayName = `Workspace.${key}`;
+
+  return Workspace;
 }
